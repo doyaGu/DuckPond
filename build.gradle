@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.8'
+}
+
+group 'com.dongyang'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    jcenter()
+    maven {
+        url "https://nexus.gluonhq.com/nexus/content/repositories/releases/"
+    }
+}
+
+dependencies {
+    compile 'com.github.almasb:fxgl:11.8'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+javafx {
+    version = "14.0.1"
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.swing', 'javafx.media' ]
+}
+
+mainClassName = 'com.dongyang.duckpond.DuckpondApp'
